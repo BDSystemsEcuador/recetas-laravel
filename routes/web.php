@@ -15,8 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
-Route::get('/recetas',RecetaController::class)->middleware();
+Route::resource('recetas', RecetaController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
