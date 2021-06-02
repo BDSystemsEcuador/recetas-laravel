@@ -15,14 +15,17 @@
             </tr>
         </thead>
         <tbody>
+            @foreach ($recetas as $receta )
             <tr>
-                <td>Helado con crema</td>
-                <td>Postre</td>
+                <td>{{$receta->titulo}}</td>
+                <td>{{$receta->categoria->nombre}}</td>
                 <td>
                     <a href="">Editar</a>
                     <a href="">Eliminar</a>
+                    <a href="{{route('recetas.show',$receta->id)}}">Ver</a>
                 </td>
             </tr>
+            @endforeach
         </tbody>
     </table>
 </div>
